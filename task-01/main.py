@@ -1,4 +1,4 @@
-def total_salary(path: str) -> tuple[int]:
+def total_salary(path: str) -> tuple[(int, float)]:
     '''
     The function analyzes the file and returns the total and average salary of all developers.
     '''
@@ -13,7 +13,7 @@ def total_salary(path: str) -> tuple[int]:
                 count += 1
             med = sum / count
     except FileNotFoundError:
-        print("Не вдалося знайти файл.\nПеревірте його ім'я та правильність шляху")
+        print(f"Не вдалося знайти файл {path}.\nПеревірте його ім'я та правильність шляху")
         return None
     
     except IndexError:
@@ -23,6 +23,4 @@ def total_salary(path: str) -> tuple[int]:
     return((sum, med))
 
 ### Uncomment section below to check the function
-'''
-print(total_salary("task-01/text.tx"))
-'''
+print(total_salary("task-01/text.txt"))
